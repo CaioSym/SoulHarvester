@@ -12,16 +12,16 @@
 			<span>by</span><a href="https://github.com/CaioSym">Caio Sym</a><span>|</span> 
 			<a href="https://github.com/CaioSym">GitHub, </a><span>|</span> 
 			<a href="https://github.com/CaioSym">Tumblr</a>
-			<div class="menuIcon"><img src='./res/icons/gear.png'></div>
-			<div class="menuIcon" onclick="Game.save()"><span>SAVE</span></div>
-			<div class="menuIcon" onclick="Game.load();"><span>LOAD</span></div>
+			<div class="menuIcon" onclick="Game.menuClicked('settings')"><img src='./res/icons/gear.png'></div>
+			<div class="menuIcon" onclick="Game.menuClicked('reset')"><span>RESET</span></div>
+			<div class="menuIcon" onclick="Game.menuClicked('load');"><span>LOAD</span></div>
+			<div class="menuIcon" onclick="Game.menuClicked('save')"><span>SAVE</span></div>
 		</div>
 		
 		<div id="mainArea">
 			
 			<div id="nav">
 				<div id="tabs">
-				lalala
 				</div>
 			</div>
 			
@@ -30,6 +30,11 @@
 			
 			<div id="leftInf">
 			</div>
+		</div>
+				
+		
+		<div id="settings">
+			
 		</div>
 				
 		<div id="toolTip">
@@ -41,7 +46,20 @@
 	
 	
 	<!-- Created -->
-	<script type="text/javascript" src="res/scripts/main.js"></script>
 	
+	<!-- Libs -->
+	<script src="res/scripts/HelpLib.js"></script>
+	
+	<!-- Classes -->
+	<!--<script src="res/scripts/ImageCache.js"></script> -->
+	<script src="res/scripts/CircCollider.js"></script>
+	<script src="res/scripts/Color.js"></script>
+	<script src="res/scripts/ToolTip.js"></script>
+	<script src="res/scripts/Soul.js"></script>
+	<script src="res/scripts/SoulParticle.js"></script>
+	<script src="res/scripts/Unit.js"></script>
+	
+	<!-- Main -->
+	<script src="res/scripts/main.js"></script>
 </body>
 </html>

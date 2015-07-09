@@ -21,6 +21,13 @@ h1 {
 	font-size: 100%;	
 }
 
+p.canBuy{
+	color:#FFFFFF;
+}
+
+p.cantBuy{
+	color:#FF0000;
+}
 
 a:link {
     color: #FFFFFF;
@@ -59,21 +66,8 @@ a:active {
 	height :260px;
 	width: 260px;
 	margin: 10px;
-	border: 2px solid blue;
-}
-
-.soulImg img {
-	position:absolute;
-	z-index: 11;
-	top: 0;
-	width : 100%;
-	cursor: pointer;
-}
-
-.soulImg img:active{
-	top: 5%;
-	left: 5%;
-	width : 90%;
+	background-image: url(../bg/slab.png);
+	background-size: 100% 100%; 
 }
 
 .soulImg p {
@@ -88,7 +82,8 @@ a:active {
 .soulCanvas {
 	position: absolute;
 	z-index: 10;
-	
+	cursor: pointer;
+	display:block;
 }
 
 .soulDesc {
@@ -130,6 +125,10 @@ a:active {
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	background-image: url(../bg/slab.png);
+	background-size: 100% 100%; 
+	text-align: center;
+	line-height: 50px;
 }
 
 .soulUnits div.unitList {
@@ -156,6 +155,33 @@ a:active {
 	overflow: hidden;
 }
 
+
+div.canBuy {
+	opacity: 1;
+	transition: opacity 1s ease-out; 
+
+}
+
+div.cantBuy {
+	opacity: 0.5;
+	transition: opacity 1s ease-out; 
+}
+
+div.canBuy:hover {
+	transition: all 0.3s ease-out; 
+	-moz-box-shadow:    inset 0 0 20px #FFFFFF;
+	-webkit-box-shadow: inset 0 0 20px #FFFFFF;
+	box-shadow:         inset 0 0 20px #FFFFFF;
+}
+
+div.canBuy:active {
+	transition: all 0.3s ease-out; 
+	-moz-box-shadow:    inset 0 0 15px #000000;
+	-webkit-box-shadow: inset 0 0 15px #000000;
+	box-shadow:         inset 0 0 15px #000000;
+}
+
+
 .soulUnits div.unitList div.unit p.unitName{
 	position: absolute;
 	top: 0;
@@ -180,8 +206,33 @@ a:active {
 	right:0;
 }
 
-.soulUnits div.unitList div.unit p.unitCost{
-	display: none;
+.soulUnits div.unitList div.unit div.unitCost{
+	position: absolute;
+	left: 70px;
+	bottom: 0;
+	height:40px;
+	margin: 0;
+	padding: 0;
+	display: block;
+	pointer-events:none;
+}
+
+.soulUnits div.unitList div.unit div.unitCost p{
+	position: relative;
+	font-size: 50%;
+	margin: 0;
+	padding: 0;
+	padding-right: 5px;
+	display: inline-block;
+}
+
+.soulUnits div.unitList div.unit div.unitCost img{
+	position: relative;
+	height: 20px;
+	width: 20px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
 }
 .soulMisc {
 	position: absolute;
@@ -324,7 +375,7 @@ a:active {
 
 #tabs div p{
 	position: static;
-	margin: 0 1px 0px; 0px;
+	margin: 0px 1px 0px; 0px;
 	padding-right: 5px;
 	float:left;
 	font-size: 180%;
@@ -391,24 +442,25 @@ a:active {
 	
 	background-color: green;
 	background-image: url(../bg/parchment.jpg);
-	background-size: 100%;
+	background-size: 100% 100%;
 	
 }
 
-#leftInf div {
+#leftInf div.souls {
 	position: relative;
 	float: left;
 	width:100%;
+	display:none;
 }
 
-#leftInf div img{
+#leftInf div.souls img{
 	position:relative;
 	float: left;
 	height: 50px;
 	width: 50px;
 }
 
-#leftInf div p{
+#leftInf div.souls p{
 	position:relative;
 	float: left;
 }
@@ -416,12 +468,30 @@ a:active {
 #toolTip {
 	position: absolute;
 	top: 0;
-	height: 30px;
-	width: 200px;
-	
-	
+	width: 300px;
+	z-index: 99999;
 	outline: 1px solid #ffffff;
 	background-color: #000000;
-	display: none;
+	opacity: 0;
+	overflow: hidden;
 }
 
+#toolTip img.mainIcon{
+	position:relative;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 200px;
+}
+
+#toolTip img.icon{
+	width: 30px;
+	height: 30px;
+}
+
+#toolTip p{
+	position:relative;
+	margin: 0;
+	padding: 0; 
+	font-size: 130%;
+}
